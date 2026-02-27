@@ -1,0 +1,85 @@
+
+/* Main top bar container */
+body > ntp-app,
+body > ntp-app-header,
+ntp-app,
+ntp-app-header {
+  display: none !important;
+}
+
+/* Fallback: hide anything Chrome injects at the top */
+html, body {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Force your content to start at top */
+#bg,
+#container {
+  top: 0 !important;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  font-family: system-ui;
+  overflow: hidden;
+}
+
+#bg {
+  position: fixed;
+  inset: -80px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(36px) brightness(0.6);
+  transform: scale(1.3);
+}
+
+#container {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+#search {
+  width: 380px;
+  max-width: 90%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  font-size: 16px;
+}
+
+#portraitBox {
+  width: 320px;
+  height: 520px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.4);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+#animeImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: center; 
+}
+
+#category {
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#caption {
+  color: rgba(255,255,255,0.85);
+  font-size: 14px;
+}

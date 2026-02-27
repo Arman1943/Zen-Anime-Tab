@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            body {
+                width: 320px;
+                padding: 15px;
+                font-family: system-ui, sans-serif;
+                background: #222;
+                color: white;
+            }
+
+            h3 {
+                margin-top: 0;
+                font-size: 16px;
+                text-align: center;
+                margin-bottom: 10px;
+                color: #ff99cc;
+            }
+
+            .controls {
+                display: flex;
+                gap: 10px;
+                margin-bottom: 15px;
+                justify-content: center;
+            }
+
+            button {
+                background: #444;
+                color: white;
+                border: none;
+                padding: 6px 12px;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 12px;
+            }
+            button:hover {
+                background: #555;
+            }
+
+            /* Special Styling for the Random Button */
+            .random-box {
+                background: #3a2a3a;
+                border: 1px solid #ff99cc;
+                padding: 10px;
+                border-radius: 6px;
+                margin-bottom: 15px;
+                display: flex;
+                align-items: center;
+            }
+
+            .random-box label {
+                font-weight: bold;
+                color: #ff99cc;
+            }
+
+            #options {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+                max-height: 400px;
+                overflow-y: auto;
+            }
+
+            .option {
+                display: flex;
+                align-items: center;
+                padding: 6px;
+                cursor: pointer;
+                border-radius: 6px;
+                background: #2a2a2a;
+                transition: background 0.2s;
+            }
+            .option:hover {
+                background: #333;
+            }
+
+            /* Visually dim disabled options */
+            .option.disabled {
+                opacity: 0.4;
+                pointer-events: none;
+            }
+
+            input[type="checkbox"] {
+                margin-right: 8px;
+                accent-color: #ff99cc;
+                cursor: pointer;
+            }
+
+            label {
+                cursor: pointer;
+                flex-grow: 1;
+                user-select: none;
+                font-size: 13px;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Anime Categories</h3>
+
+        <div class="random-box">
+            <input type="checkbox" id="fullyRandom" value="random" />
+            <label for="fullyRandom">🎲 Fully Random</label>
+        </div>
+
+        <div class="controls">
+            <button id="selectAll">Select All</button>
+            <button id="deselectAll">Deselect All</button>
+        </div>
+
+        <div id="options"></div>
+        <script src="popup.js"></script>
+    </body>
+</html>
